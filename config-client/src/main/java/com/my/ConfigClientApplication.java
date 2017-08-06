@@ -22,7 +22,9 @@ public class ConfigClientApplication {
 	String foo;
 
 	/**
-	 * 测试时，更改git中的配置文件，此处访问http://localhost:8881/hi的返回值未更新，原因暂未知
+	 * 测试时，更改git中的配置文件，此处访问http://localhost:8881/hi的返回值未更新,重启后才能更新，原因暂未知
+	 *
+	 * springcloud-bus中有解决方案，配置rabbitmq后，通过http://localhost:8881/bus/refresh更新配置，不需要重启服务
 	 * @return
 	 */
 	@RequestMapping(value = "/hi")
